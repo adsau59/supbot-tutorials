@@ -3,6 +3,7 @@ package in.definex;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import in.definex.Joke.JokeFeature;
 import in.definex.Math.MathFeature;
 import in.definex.UrbanDictionary.UrbanDictionaryFeature;
 import org.apache.http.HttpResponse;
@@ -31,7 +32,8 @@ public class Main {
 
                         //Bot.getFeatureManager().add(new YourFeature(Parameters params));
                         Bot.getFeatureManager().add(new MathFeature());
-                        Bot.getFeatureManager().add(new UrbanDictionaryFeature());
+                        Bot.getFeatureManager().add(new UrbanDictionaryFeature(),
+                                new JokeFeature());
 
                         //Bot.getChatProcessorManager.add(new YourChatProcessor(Parameters params));
 

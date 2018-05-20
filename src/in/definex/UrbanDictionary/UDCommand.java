@@ -18,6 +18,16 @@ public class UDCommand extends Command {
 
     private static final String keyword = "ud";
 
+    private static final String responseTemplate =
+            "%s\n\n" +
+                    "Definition:\n" +
+                    "%s\n\n" +
+                    "Example:\n" +
+                    "%s\n\n" +
+                    "Link:\n" +
+                    "%s";
+
+
     public UDCommand() {
         super(keyword, 1, Client.Role.Member);
     }
@@ -52,9 +62,14 @@ public class UDCommand extends Command {
             if(jsonObject.get("result_type").getAsString().equals("no_results") )
                 return "Word not found in Urban Dictionary";
 
-            String def = jsonObject.getAsJsonArray("list").get(0).getAsJsonObject().get("definition").getAsString();
+            JsonObject meaning = jsonObject.getAsJsonArray("list").get(0).getAsJsonObject();
 
-            return def;
+            return String.format(responseTemplate,
+                    strings[0],
+                    meaning.get("definition").getAsString(),
+                    meaning.get("example").getAsString(),
+                    meaning.get("permalink").getAsString()
+            );
 
         } catch (Exception e) {
             e.printStackTrace();
