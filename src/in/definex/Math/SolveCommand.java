@@ -14,8 +14,8 @@ public class SolveCommand extends Command {
 
     public static final String name = "solve";
 
-    public SolveCommand() {
-        super(name, -1, Client.Role.Member);
+    SolveCommand() {
+        super("solve", -1, Client.Role.Member);
     }
 
     @Override

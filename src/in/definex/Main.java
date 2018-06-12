@@ -1,26 +1,14 @@
 package in.definex;
 
-
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import in.definex.Joke.JokeFeature;
 import in.definex.Math.MathFeature;
+import in.definex.PinMessages.PinDatabase;
+import in.definex.PinMessages.PinFeature;
 import in.definex.UrbanDictionary.UrbanDictionaryFeature;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.HttpClientBuilder;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
-
-
         //Creating the looper and sending code to create components and initializing it
         Looper looper = new Looper(
 
@@ -31,9 +19,14 @@ public class Main {
                         //add stuff in the bot here,
 
                         //Bot.getFeatureManager().add(new YourFeature(Parameters params));
-                        Bot.getFeatureManager().add(new MathFeature());
-                        Bot.getFeatureManager().add(new UrbanDictionaryFeature(),
-                                new JokeFeature());
+                        Bot.getFeatureManager().add(
+                                new MathFeature(),
+                                new UrbanDictionaryFeature(),
+                                new JokeFeature(),
+                                new PinFeature()
+                        );
+
+                        Bot.getDatabaseManager().add(new PinDatabase());
 
                         //Bot.getChatProcessorManager.add(new YourChatProcessor(Parameters params));
 
@@ -51,7 +44,7 @@ public class Main {
                 }
 
         );
-        looper.setChromeProfileLoc("C:\\Users\\adam_\\Desktop\\ChromeProfile");
+        looper.setChromeProfileLoc("D:\\Extra\\ChromeProfile");
 
         //use this method to set your chrome profile
         //looper.setChromeProfileLoc("D:\\Extra\\ChromeProfile");
