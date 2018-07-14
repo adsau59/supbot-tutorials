@@ -28,6 +28,9 @@ public class DeletePinCommand extends Command {
                 !client.getName().equals(pin.getCreator().getName()))
             return "You are not the author of this pin, You can not delete it.";
 
+        if(!client.getChatGroup().getGroupId().equals(pin.getCreator().getGroupId()))
+            return "The pin doesn't belong to this group.";
+
         if(PinDatabase.DeletePinWithID(rowid))
             return "Pinned Message has been deleted.";
 

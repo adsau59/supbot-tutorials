@@ -1,5 +1,6 @@
 package in.definex;
 
+import in.definex.Joke.JokeDatabase;
 import in.definex.Joke.JokeFeature;
 import in.definex.Math.MathFeature;
 import in.definex.PinMessages.PinDatabase;
@@ -26,7 +27,10 @@ public class Main {
                                 new PinFeature()
                         );
 
-                        Bot.getDatabaseManager().add(new PinDatabase());
+                        Bot.getDatabaseManager().add(
+                                new PinDatabase(),
+                                new JokeDatabase()
+                        );
 
                         //Bot.getChatProcessorManager.add(new YourChatProcessor(Parameters params));
 
