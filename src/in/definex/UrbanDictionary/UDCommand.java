@@ -60,7 +60,7 @@ public class UDCommand extends Command {
 
             JsonObject jsonObject = new JsonParser().parse(jsonString).getAsJsonObject();
 
-            if(jsonObject.get("result_type").getAsString().equals("no_results") )
+            if(jsonObject.getAsJsonArray("list").size() <= 0 )
                 return "Word not found in Urban Dictionary";
 
             JsonObject meaning = jsonObject.getAsJsonArray("list").get(0).getAsJsonObject();
