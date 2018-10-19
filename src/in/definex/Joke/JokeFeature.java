@@ -14,7 +14,7 @@ public class JokeFeature extends Feature {
      * Joke feature has 2 commands, TellAJokeCommand and AddAJokeCommand.
      */
     public JokeFeature() {
-        super("Joke", new Command[]{new TellAJokeCommand(), new AddAJokeCommand()});
+        super("Joke", new Command[]{new TellAJokeCommand(), new AddAJokeCommand(), new DailyJokeCommand()});
     }
 
     /**

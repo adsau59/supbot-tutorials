@@ -2,6 +2,7 @@ package in.definex;
 
 import in.definex.Joke.JokeDatabase;
 import in.definex.Joke.JokeFeature;
+import in.definex.Joke.JokeST;
 import in.definex.Math.MathFeature;
 import in.definex.PinMessages.PinDatabase;
 import in.definex.PinMessages.PinFeature;
@@ -32,6 +33,11 @@ public class Main {
                                 new JokeDatabase()
                         );
 
+                        Bot.getScheduleTaskInitializer().add(
+                                GoodMorningST.class,
+                                JokeST.class
+                        );
+
                         //Bot.getChatProcessorManager.add(new YourChatProcessor(Parameters params));
 
                         //Bot.getChecker().add(new YourCheckers(Parameters params));
@@ -48,7 +54,7 @@ public class Main {
                 }
 
         );
-        looper.setChromeProfileLoc("D:\\Extra\\ChromeProfile");
+        looper.setChromeProfileLoc("C:\\Work\\Projects\\supbot_tuts\\null");
 
         //use this method to set your chrome profile
         //looper.setChromeProfileLoc("D:\\Extra\\ChromeProfile");
