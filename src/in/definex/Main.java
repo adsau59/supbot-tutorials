@@ -38,6 +38,10 @@ public class Main {
                                 JokeST.class
                         );
 
+                        Bot.getConsole().getConsoleCommandManager().add(
+                                new BroadcastCC()
+                        );
+
                         //Bot.getChatProcessorManager.add(new YourChatProcessor(Parameters params));
 
                         //Bot.getChecker().add(new YourCheckers(Parameters params));

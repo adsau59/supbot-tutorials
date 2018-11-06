@@ -35,11 +35,15 @@ This repository contains the source code of the [tutorial series of Supbot API](
 
 #### Ep.4 Scheduler and SchedulerTask
 
-coming soon
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=Ji58JOsZfos"><img src="https://img.youtube.com/vi/Ji58JOsZfos/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
 
 #### Ep.5 Console Command
 
-coming soon
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=kvHFJIWLans"><img src="https://img.youtube.com/vi/kvHFJIWLans/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
 
 #### Ep.6 ChatProcessor
 
